@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-7_ex-1</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+</head>
+<body>
+    <form method="POST" action="funcio.php">
+    <fieldset>
+    <label>Primer número</label>
+    <input type="text" name="num1" value="5"><br>
+    <label>Segon número</label>
+    <input type="text" name="num2" value="0"><br>
+    <label>Operació</label>
+    <select name="operacio">
+        <option value="+">Suma</option>
+        <option value="-">Resta</option>
+        <option value="*">Multiplicació</option>
+        <option selected="selected" value="/">Divisió</option>
+        <option value="%">Mòdul</option>
+    </select>
+    <input type="submit" name="enviar" value="Calcular">
+    </fieldset>
+    </form>
+</body>
+</html>
