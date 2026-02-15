@@ -18,7 +18,7 @@ session_start();
             Programa en PHP diverses normes de validació pels camps del formulari. 
             Com per exemple que el camp no sigui buit o que compleixi determinades circumstàncies simples com ser un nombre en cas de ser un camp numèric.
         -->
-<?php $_SESSION["SessionVariable"] = "Variable de sessió definida a la pàgina index.php"; ?>
+        <?php $_SESSION["SessionVariable"] = "Variable de sessió definida a la pàgina index.php"; ?>
         <form method="POST" action="usuari.php">
             <fieldset>
                 <legend>Identificat</legend>
@@ -30,9 +30,7 @@ session_start();
                 <input type="text" name="Email" value="mail@mail.es"><br>
                 <input type="submit" name="enviar" value="Enviar dades">
             </fieldset>
-        </form>
-        <?php
-        ?>
+        </form>        
     </div>
 </body>
 </html>

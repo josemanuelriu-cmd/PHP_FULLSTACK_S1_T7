@@ -4,9 +4,9 @@
 	$num2 = $_POST["num2"];
 	$operation = $_POST["operacio"];
 	
-	if (Validar($num1) and Validar($num2)){
+	if (Validate($num1) and Validate($num2)){
 		try{
-			$resultat = Calcular($num1, $num2, $operation);		
+			$resultat = Calculate($num1, $num2, $operation);		
 			echo "El resultat es igual a $resultat <br>";
 		}
 		catch(DivisionByZeroError $e){
@@ -20,7 +20,7 @@
 		}
 	}
 
-	function Calcular($num1, $num2, $operation):string{
+	function Calculate(float $num1, float $num2, string $operation):string{
 
 		switch ($operation){
 			case '+': 
@@ -45,7 +45,7 @@
 		return $resultat;
 	}
 
-	function Validar($num):bool{
+	function Validate(string $num):bool{
 		$isNumber = is_numeric($num);
 		if ($num == '') {
 			echo "Error, ha d'indicar els valors";
