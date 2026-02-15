@@ -2,11 +2,11 @@
 	error_reporting(E_ALL);
 	$num1 = $_POST["num1"];
 	$num2 = $_POST["num2"];
-	$operacio = $_POST["operacio"];
+	$operation = $_POST["operacio"];
 	
 	if (Validar($num1) and Validar($num2)){
 		try{
-			$resultat = Calcular($num1, $num2, $operacio);		
+			$resultat = Calcular($num1, $num2, $operation);		
 			echo "El resultat es igual a $resultat <br>";
 		}
 		catch(DivisionByZeroError $e){
@@ -20,9 +20,9 @@
 		}
 	}
 
-	function Calcular($num1, $num2, $operacio):string{
+	function Calcular($num1, $num2, $operation):string{
 
-		switch ($operacio){
+		switch ($operation){
 			case '+': 
 				$resultat = $num1 + $num2;    
     			break;
@@ -34,7 +34,7 @@
     			break;
 			case '%': 
 			case '/':
-				if($operacio=='%') {
+				if($operation=='%') {
 					$resultat = $num1 % $num2;   
 				} 
 				else {
@@ -46,11 +46,11 @@
 	}
 
 	function Validar($num):bool{
-		$bolean = is_numeric($num);
+		$isNumber = is_numeric($num);
 		if ($num == '') {
 			echo "Error, ha d'indicar els valors";
 			return FALSE;
-		} elseif (!$bolean) {	
+		} elseif (!$isNumber) {	
 			echo "Error, el valor no és un número";
 			return FALSE;
 		}
