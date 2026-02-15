@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start(); 
+session_start();
+$_SESSION["SessionVariable"] = "Variable de sessió definida a la pàgina index.php";
 ?> 
 <html lang="en">
 <head>
@@ -15,16 +16,16 @@ session_start();
         <!--
            Crea excepcions personalitzades per tractar els possibles errors que hi pugui haver en la validació del formulari de l'exercici anterior.
         -->
-<?php $_SESSION["SessionVariable"] = "Variable de sessió definida a la pàgina index.php"; ?>
+
         <form method="POST" action="usuari.php">
             <fieldset>
                 <legend>Identificat</legend>
                 <label>Usuari</label>
-                <input type="text" name="User" value="User"><br>
+                <input type="text" name="User" value="User" required><br>
                 <label>Edad</label>
-                <input type="integer" name="Age" value="18"><br>
+                <input type="number" name="Age" min="1" value="18" required><br>
                 <label>Email</label>
-                <input type="text" name="Email" value="mail@mail.es"><br>
+                <input type="email" name="Email" value="mail@mail.es" required><br>
                 <input type="submit" name="enviar" value="Enviar dades">
             </fieldset>
         </form>
